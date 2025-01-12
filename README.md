@@ -17,17 +17,14 @@ Welcome to the Music Player project! This repository contains a robust music pla
 - **Real-Time Updates**: Provides real-time updates on elapsed and remaining time for the currently playing track.  
 
 ## Files in the Repository
-1. **`musicplayer.cpp`**
-    - The main source code for the application.  
-2. **`musicplayer.ui`**
-    - Qt Designer file for the graphical user interface.  
-3. **`resources.qrc`**
-    - Contains references to multimedia assets and icons.  
+1. **`Executable File`**
+    - Contains the compiled `.exe` file of the music player for quick execution without requiring compilation.  
+2. **`Full Project File`**
+    - Includes the complete project files such as Qt project file `.pro`, header files `.h`, cpp files `.cpp` and others necessary for development and modification.
 
 ## Prerequisites
 To run this project, you will need:
-- **Qt Creator**: IDE for building and running the application.  
-- **Visual Studio 2022** (optional): Alternative IDE for development.  
+- **Qt Creator**: IDE for building and running the application in Full Project File. 
 
 ## How to use
 1. Load songs into the music player using one of the two options available in the Open tab:
