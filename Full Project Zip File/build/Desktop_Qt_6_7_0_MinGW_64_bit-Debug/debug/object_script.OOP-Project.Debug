@@ -1,0 +1,10 @@
+debug/artist_name_enter.o
+debug/main.o
+debug/mainwindow.o
+debug/propertieswindow.o
+debug/selectclass.o
+debug/qrc_Icons.o
+debug/moc_artist_name_enter.o
+debug/moc_mainwindow.o
+debug/moc_propertieswindow.o
+debug/moc_selectclass.o

@@ -1,0 +1,10 @@
+release/artist_name_enter.o
+release/main.o
+release/mainwindow.o
+release/propertieswindow.o
+release/selectclass.o
+release/qrc_Icons.o
+release/moc_artist_name_enter.o
+release/moc_mainwindow.o
+release/moc_propertieswindow.o
+release/moc_selectclass.o
