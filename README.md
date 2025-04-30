@@ -27,7 +27,7 @@ To run or modify this project, you will need:
 1. **Load Songs**:  
    - Use the `Open` tab to select audio files manually or load all songs from a folder by entering its name.  
 2. **Playback Controls**:  
-   - Use play, pause, shuffle, repeat, and volume settings to customize your experience.  
+   - Use play, pause, shuffle, repeat and volume settings to customize your experience.  
 3. **Explore Advanced Features**:  
    - Adjust playback speed, navigate the timeline, and view track properties for detailed insights.  
 
