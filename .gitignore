@@ -1,0 +1,8 @@
+.DS_Store
+
+# Qt / qmake build output
+build/
+dist/
+
+# Qt Creator user-specific config
+*.pro.user

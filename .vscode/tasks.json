@@ -1,0 +1,53 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Qt: Configure (qmake)",
+      "type": "shell",
+      "command": "zsh",
+      "args": [
+        "-lc",
+        "QT_QMAKE=\"\"; if command -v qmake6 >/dev/null 2>&1; then QT_QMAKE=\"$(command -v qmake6)\"; elif command -v qmake >/dev/null 2>&1; then QT_QMAKE=\"$(command -v qmake)\"; elif [[ -x \"/opt/homebrew/opt/qt/bin/qmake\" ]]; then QT_QMAKE=\"/opt/homebrew/opt/qt/bin/qmake\"; fi; if [[ -z \"$QT_QMAKE\" ]]; then echo \"qmake not found. Install Qt or add it to PATH.\"; exit 1; fi; mkdir -p \"build/musicplayer\" && cd \"build/musicplayer\" && \"$QT_QMAKE\" \"../../project/source/MusicPlayer.pro\""
+      ],
+      "problemMatcher": [
+        "$gcc"
+      ]
+    },
+    {
+      "label": "Qt: Build",
+      "type": "shell",
+      "command": "zsh",
+      "args": [
+        "-lc",
+        "make -C \"build/musicplayer\" -j$(sysctl -n hw.ncpu) && rm -rf \"dist/MusicPlayer.app\" && cp -R \"build/musicplayer/MusicPlayer.app\" \"dist/MusicPlayer.app\""
+      ],
+      "dependsOn": "Qt: Configure (qmake)",
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": "build"
+    },
+    {
+      "label": "Qt: Run",
+      "type": "shell",
+      "command": "zsh",
+      "args": [
+        "-lc",
+        "if [[ -x \"dist/MusicPlayer.app/Contents/MacOS/MusicPlayer\" ]]; then \"dist/MusicPlayer.app/Contents/MacOS/MusicPlayer\"; elif [[ -x \"build/musicplayer/MusicPlayer.app/Contents/MacOS/MusicPlayer\" ]]; then \"build/musicplayer/MusicPlayer.app/Contents/MacOS/MusicPlayer\"; else echo \"Build output not found. Run Qt: Build first.\"; exit 1; fi"
+      ],
+      "dependsOn": "Qt: Build"
+    },
+    {
+      "label": "Qt: Clean",
+      "type": "shell",
+      "command": "zsh",
+      "args": [
+        "-lc",
+        "if [[ -f \"build/musicplayer/Makefile\" ]]; then make -C \"build/musicplayer\" clean; else echo \"Nothing to clean.\"; fi; rm -rf \"dist/MusicPlayer.app\""
+      ],
+      "problemMatcher": [
+        "$gcc"
+      ]
+    }
+  ]
+}
